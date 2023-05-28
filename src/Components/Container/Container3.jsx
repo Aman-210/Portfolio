@@ -1,4 +1,4 @@
-import { Box, styled , Typography , Divider , LinearProgress, Button} from "@mui/material";
+import { Box, styled , Typography , Divider ,  Button} from "@mui/material";
 
 const Section= styled(Box)(({theme})=>({
     // background:'black',
@@ -45,6 +45,10 @@ const Section2= styled(Box)(({theme})=>({
     marginLeft:'18vh',
     marginTop:'10vh',
     gap:'10vh',
+    [theme.breakpoints.down('md')]:{
+        marginLeft:'1vh',
+       
+     },
     [theme.breakpoints.down('sm')]:{
         marginLeft:'0vh',
         display:'block'
@@ -54,6 +58,11 @@ const Section2= styled(Box)(({theme})=>({
 const Heading = styled(Typography)(({theme})=>({
     fontSize:'30px',
     fontWeight:'bold',
+    [theme.breakpoints.down('md')]:{
+      
+     fontSize:'27px'
+       
+     },
     [theme.breakpoints.down('sm')]:{
       
 
@@ -63,8 +72,8 @@ const Heading = styled(Typography)(({theme})=>({
 const Box1 = styled(Box)(({theme})=>({
     marginTop:'2vh',
     borderLeft:'2px solid #f5df4e',
-    [theme.breakpoints.down('sm')]:{
-    
+    [theme.breakpoints.down('md')]:{
+    marginLeft:'-3.2vh'
      }
 }))
 const Box2 = styled(Box)(({theme})=>({
@@ -99,6 +108,10 @@ const Description = styled(Typography)(({theme})=>({
 const Section3 = styled(Box)(({theme})=>({
     marginTop:'5vh',
     marginLeft:'17vh',
+    [theme.breakpoints.down('md')]:{
+        marginLeft:'2vh',
+       
+     },
     [theme.breakpoints.down('sm')]:{
         marginLeft:'0',
         marginRight:'auto'
@@ -115,10 +128,15 @@ const Section4 = styled(Box)(({theme})=>({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '50vh',
+  [theme.breakpoints.down('md')]:{
+    gap:'2vh'
+  
+ },
   [theme.breakpoints.down('sm')]:{
     
     display:'block'
- }
+ },
+ 
  
 }))
 const Skills = styled(Typography)(({theme})=>({
@@ -203,18 +221,19 @@ const Buttons = styled(Button)(({theme})=>({
     padding:'2vh',
     display:'block',
     marginLeft:'45%',
+    width:'20vh',
     ":hover":{
      background:'rgba(0, 0, 0, 0.5)'
     },
     [theme.breakpoints.down('sm')]:{
-         marginLeft:'-20vh'
+         marginLeft:'-5vh'
     }
     
  }))
 
 const Container3 = ()=>{
     return(
-    <Section>
+    <Section >
         <Headline>
             <UpperHeadline>Resume</UpperHeadline>
             <LowerHeadline>A Summary of my Resume</LowerHeadline>
@@ -291,7 +310,7 @@ const Container3 = ()=>{
             </Section4>
         </Section3>
         
-          <Buttons>Download CV</Buttons>
+          <Buttons href="/Resume.pdf" download='Resume.pdf' >Download CV</Buttons>
         
     </Section>
     )

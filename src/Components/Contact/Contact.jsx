@@ -29,6 +29,10 @@ const Content = styled(Box)(({theme})=>({
    marginTop:'20vh',
    color:'#343a40',
 
+    [theme.breakpoints.down('md')]:{
+      
+       gap:'2vh' 
+    },
     [theme.breakpoints.down('sm')]:{
        marginRight:'auto',
        display:'block',
@@ -52,19 +56,13 @@ const Side2 = styled(Box)(({theme})=>({
         
         }
     }))
-const TextFields = styled(Box)(({theme})=>({
-   width:'80vh',
-    [theme.breakpoints.down('sm')]:{
-       
-        
-        }
-    }))
+
         
    
 
 const Buttons = styled(Button)(({theme})=>({
     marginTop:'16vh',
-    
+    width:'20vh',
      background:'#343a40',
     color:'#fff',
     padding:'2vh',
@@ -72,14 +70,15 @@ const Buttons = styled(Button)(({theme})=>({
      background:'rgba(0, 0, 0, 0.5)'
     },
     [theme.breakpoints.down('sm')]:{
-         
+         borderRadius:'28px',
+
     }
     
  }))
 
 const Contact = ()=>{
     return(
-    <Section>
+    <Section id="contact">
         <Content>
             <Side1>
                 <Typography>
@@ -93,26 +92,30 @@ const Contact = ()=>{
                 <Typography><h2>Call:</h2></Typography>
                 <Typography><p>(+91)9352495750</p></Typography>
                 <Typography >
-                <LinkedInIcon sx={{cursor:'pointer' , 
+                    <a href="https://www.linkedin.com/in/aman-sharma-6443171b2/">
+                <LinkedInIcon   sx={{cursor:'pointer' , 
                              ":hover":{
                                 color:'#3498db'
                                },
-                            }} />
-                <GitHubIcon sx={{marginLeft:'2vh' , cursor:'pointer',
+                            }} /></a>
+                        <a href="https://github.com/Aman-210">  
+                <GitHubIcon  href='' sx={{marginLeft:'2vh' , cursor:'pointer',
                                ":hover":{
                                 color:'#bb86fc'
                                },
-                             }} />
-                <InstagramIcon sx={{marginLeft:'2vh' , cursor:'pointer',
+                             }} /></a>  
+                             <a href="https://www.instagram.com/aman_sharma_21_05/">
+                <InstagramIcon  href='' sx={{marginLeft:'2vh' , cursor:'pointer',
                              ":hover":{
                                 color:'#ff2d55'
                                },
-                           }} />
-                <MailOutlineIcon sx={{marginLeft:'2vh' , cursor:'pointer',
+                           }} /></a>
+                           <a href="">
+                <MailOutlineIcon  href="mailto:aman789bhutiya@gmail.com" sx={{marginLeft:'2vh' , cursor:'pointer',
                                   ":hover":{
                                     color:'#ff2d55'
                                    },
-                                }}/>
+                                }}/></a>
                 </Typography>
 
             </Side1>

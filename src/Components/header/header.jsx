@@ -17,12 +17,16 @@ background:'#f5df4e',
 const Logo = styled(Typography)(({theme})=>({
  color:'#343a40',
  fontSize:'30px',
- fontWeight:'bold'
+ fontWeight:'bold',
+ cursor:'pointer'
 
 }))
 const Nav = styled(Tabs)(({theme})=>({
 
    marginLeft:'15rem',
+   [theme.breakpoints.down('md')]:{
+    marginLeft:'3rem',
+   },
    [theme.breakpoints.down('sm')]:{
    display:'none'
    }
@@ -39,6 +43,9 @@ const Number = styled(Box)(({theme})=>({
    marginLeft:'auto' ,
    color:'#343a40',
    
+   [theme.breakpoints.down('md')]:{
+    display:'none'
+   },
    [theme.breakpoints.down('sm')]:{
     display:'none'
    }
@@ -75,19 +82,19 @@ const Header = ()=>{
                 <ClearIcon style={{fontSize:'30px' , marginLeft:'22.5rem' , }} onClick={HandleClose}/>
                 
                 <ListItem sx={{display:'block' ,  fontFamily:'sans-serif' ,fontSize:'20px' , marginTop:'5rem'}}>
-                    <ListItemButton sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center', color:'#f5df4e'}}>
+                    <ListItemButton href='#home' sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center', color:'#f5df4e'}}>
                         Home
                     </ListItemButton>
-                    <ListItemButton sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' , color:'#f5df4e'}}>
+                    <ListItemButton href='#About' sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' , color:'#f5df4e'}}>
                         About me
                     </ListItemButton>
-                    <ListItemButton sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center',color:'#f5df4e'}}>
+                    <ListItemButton href='#project' sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center',color:'#f5df4e'}}>
                         My Work
                     </ListItemButton>
-                    <ListItemButton sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' , color:'#f5df4e'}}>
+                    <ListItemButton href='#what I do' sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' , color:'#f5df4e'}}>
                         What I Do
                     </ListItemButton>
-                    <ListItemButton sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' ,color:'#f5df4e'}}>
+                    <ListItemButton href='#contact' sx={{display:'block' , padding:'10px', marginBottom:'10px' , textAlign:'center' ,color:'#f5df4e'}}>
                       Contact Me
                     </ListItemButton>
                 </ListItem>
@@ -104,15 +111,15 @@ const Header = ()=>{
         <Box>
          <Navbar >
          <Toolbar >
-         <Logo>
-            PORTFOLIO
+         <Logo href='#home'>
+           PORTFOLIO
          </Logo>
          <Nav >
-            <Li label="Home"/>
-            <Li label="About me"/>
-            <Li label="My Work"/>
-            <Li label="What I Do"/>
-            <Li label="Contact me"/>
+            <Li href='#home' label="Home"/>
+            <Li href='#About' label="About me"/>
+            <Li href='#project' label="My Work"/>
+            <Li href='#what I do' label="What I Do"/>
+            <Li href='#contact' label="Contact me"/>
          </Nav>
          
         <Number>

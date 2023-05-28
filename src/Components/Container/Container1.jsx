@@ -40,6 +40,10 @@ const About = styled(Box)(({theme})=>({
     color:'#343a40',
     marginLeft:'5rem',
     marginTop:'3rem',
+    [theme.breakpoints.down('md')]:{
+        marginLeft:'0'
+
+    },
     [theme.breakpoints.down('sm')]:{
         marginLeft:'0'
 
@@ -73,6 +77,14 @@ const Summary = styled(Typography)(({theme})=>({
 const Experience = styled(Box)(({theme})=>({
    marginLeft:'70rem',
    marginTop:'-13rem',
+   [theme.breakpoints.down('md')]:{
+       marginLeft:'0',
+       display:'block',
+       textAlign:'center',
+       marginTop:'5vh',
+       
+       
+   },
    [theme.breakpoints.down('sm')]:{
        marginLeft:'0',
        display:'block',
@@ -88,6 +100,12 @@ const Background = styled(Typography)(({theme})=>({
    height:'15vh',
    borderRadius:'10vh',
    background:'#f5df4e',
+   [theme.breakpoints.down('md')]:{
+    display:'block',
+    marginLeft:'auto',
+    marginRight:'auto'
+    
+   },
    [theme.breakpoints.down('sm')]:{
     display:'block',
     marginLeft:'auto',
@@ -104,7 +122,7 @@ const Text = styled(Typography)(({theme})=>({
    marginLeft:'-6vh',
   fontSize:'20px',
   fontWeight:'bold',
-  [theme.breakpoints.down('sm')]:{
+  [theme.breakpoints.down('md')]:{
        
   }
 }))
@@ -113,10 +131,16 @@ const Detail = styled(Box)(({theme})=>({
   display:'flex',
   justifyContent:'center',
   gap:'21.3rem',
+  [theme.breakpoints.down('md')]:{
+    display:'block',
+    marginTop:'5vh',
+    
+   
+  },
   [theme.breakpoints.down('sm')]:{
     display:'block',
     marginTop:'10vh',
-    
+   
    
   }
 
@@ -127,6 +151,18 @@ const SubDetail = styled(Box)(({theme})=>({
   display:'flex',
   justifyContent:'center',
   gap:'14.9rem',
+  [theme.breakpoints.down('md')]:{
+    gap:'0',
+    display:'block',
+   
+    marginLeft:'20vh',
+    marginTop:'-8vh',
+   
+    fontSize:'10px'
+
+
+    
+  },
   [theme.breakpoints.down('sm')]:{
     gap:'0',
     display:'block',
@@ -144,7 +180,7 @@ const SubDetail = styled(Box)(({theme})=>({
 
 const Container1 = ()=>{
  return(
-    <Section>
+    <Section id="About">
         <Headline>
             <UpperHeadline>About me</UpperHeadline>
             <LowerHeadline>Know me More</LowerHeadline>

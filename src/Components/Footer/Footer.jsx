@@ -19,8 +19,24 @@ const Content  = styled(Box)(({theme})=>({
     marginTop:'10vh',
     [theme.breakpoints.down('sm')]:{
        display:'block',
-       marginTop:'3vh',
+       marginTop:'7vh',
+       marginLeft:'3vh',
        gap:'0',
+       
+    }
+}))
+const Lower  = styled(Typography)(({theme})=>({
+   
+    [theme.breakpoints.down('sm')]:{
+       marginTop:'5vh',
+       marginLeft:'5vh'
+       
+    }
+}))
+const Upper  = styled(Typography)(({theme})=>({
+   
+    [theme.breakpoints.down('sm')]:{
+      
        
     }
 }))
@@ -28,13 +44,13 @@ const Footer = ()=>{
  return(
  <Section>
    <Content>
-    <Typography>
-        Copyright © 2023 <span style={{color:'#f5df4e' , borderBottom:'1px solid #f5df4e' , fontWeight:'bold'}}>Aman.</span> All Rights Reserved.
-    </Typography>
-    <Typography sx={{display:'flex' , gap:'1vh'}}>
+    <Lower sx={{display:'flex' , gap:'1vh'}}>
        Designed by <span style={{color:'#f5df4e' ,  fontWeight:'bold'}}>Aman Sharma</span> with
       <Typography><FavoriteIcon sx={{color:'red'}}/> </Typography> 
-    </Typography>
+    </Lower>
+    <Upper>
+        Copyright © 2023 <span style={{color:'#f5df4e' , borderBottom:'1px solid #f5df4e' , fontWeight:'bold'}}>Aman.</span> All Rights Reserved.
+    </Upper>
    </Content>
  </Section>
  )

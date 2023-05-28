@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Box,  Button,  styled, Typography } from "@mui/material";
 
+import { Box,  Button,  styled, Typography } from "@mui/material";
+import photo from './photo.png';
 const Section = styled(Box)(({theme})=>({
     backgroundColor:'#f5df4e' ,
      width:"100%",
@@ -10,6 +10,16 @@ const Section = styled(Box)(({theme})=>({
     
      alignItem: 'center',
      boxSizing: 'border-box',
+
+   
+     [theme.breakpoints.up('sm')]:{
+     
+       },
+
+
+
+
+
      [theme.breakpoints.down('sm')]:{
       width:"100%",
       height:'105vh',
@@ -20,6 +30,7 @@ const Section = styled(Box)(({theme})=>({
 
 }))
 const Image = styled(Box)(({theme})=>({
+ 
     backgroundColor:'#fff' ,
     width:'60vh',
     height:'60vh',
@@ -28,11 +39,27 @@ const Image = styled(Box)(({theme})=>({
     marginTop:'8rem',
     marginLeft:'auto',
     marginRight:'15vh',
+  
+   
+     
+     
+      [theme.breakpoints.down('md')]:{
+        backgroundColor:'#fff' ,
+        width:'25vh',
+        height:'25vh',
+        borderRadius:'50vh',
+        marginTop:'8rem',
+        
+        marginRight:'25vh',
+        
+      },
+    
+ 
     [theme.breakpoints.down('sm')]:{
      width:'30vh',
      height:'30vh',
      marginTop:'5rem',
-    //  marginRight:'18vh',
+     marginRight:'14vh',
     },
 
 }))
@@ -41,6 +68,12 @@ const Img = styled('img')(({theme})=>({
     height:'54vh' ,
     padding:'2.8vh',
     borderRadius:'30vh',
+   
+  [theme.breakpoints.down('md')]:{
+    width:'18vh' ,
+    height:'18vh' ,
+    padding:'1.2vh',
+    },
   [theme.breakpoints.down('sm')]:{
     width:'28vh' ,
     height:'28vh' ,
@@ -53,6 +86,12 @@ const Detail = styled(Box)(({theme})=>({
    color:'#343a40',
     marginLeft:'8rem',
     marginTop:'-45vh',
+    [theme.breakpoints.down('md')]:{
+        marginTop:'5vh',
+        marginLeft:'3.3rem',
+        display:'block',
+       
+    },
     [theme.breakpoints.down('sm')]:{
         marginTop:'5vh',
         marginLeft:'3.3rem',
@@ -64,6 +103,11 @@ const Detail = styled(Box)(({theme})=>({
 const UpperHeading = styled(Typography)(({theme})=>({
    fontSize:'5vh',
    
+   [theme.breakpoints.down('md')]:{
+    fontSize:'4vh',
+    marginLeft:'4rem',
+    marginTop:'2rem'
+   }   ,
    [theme.breakpoints.down('sm')]:{
     fontSize:'2.5vh',
     marginLeft:'3rem',
@@ -75,18 +119,28 @@ const MiddleHeading = styled(Typography)(({theme})=>({
    fontSize:'10vh',
    fontWeight:'bold',
    
+   [theme.breakpoints.down('md')]:{
+    fontSize:'6.5vh',
+    marginLeft:'-0.9rem',
+    
+   },
    [theme.breakpoints.down('sm')]:{
     fontSize:'4.5vh',
-    marginLeft:'.1rem',
+    marginLeft:'-0.9rem',
     
-   }
+   },
 }))
 const LowerHeading = styled(Typography)(({theme})=>({
    fontSize:'5vh',
    
+   [theme.breakpoints.down('md')]:{
+    fontSize:'4vh',
+    marginLeft:'3rem',
+    marginTop:'.5rem'
+   },
    [theme.breakpoints.down('sm')]:{
     fontSize:'3vh',
-    marginLeft:'2rem',
+    marginLeft:'1rem',
     marginTop:'.5rem'
    }
 }))
@@ -98,8 +152,11 @@ const Buttons = styled(Button)(({theme})=>({
    ":hover":{
     background:'rgba(0, 0, 0, 0.5)'
    },
+   [theme.breakpoints.down('md')]:{
+        marginLeft:'6rem'
+   },
    [theme.breakpoints.down('sm')]:{
-        
+        marginLeft:'0rem'
    }
    
 }))
@@ -107,13 +164,14 @@ const Buttons = styled(Button)(({theme})=>({
 
 
 const Header2 = ()=>{
-    
+   
       
     return(
-    <Section >
+    <Section id="home" >
      
      <Image>
-        <Img src="/photo.png" style={{}} alt="" />
+        <Img src={photo} alt="image" />
+        
       
     </Image>
      <Detail>
@@ -126,8 +184,8 @@ const Header2 = ()=>{
       <LowerHeading>
         based in Kota, Rajasthan
       </LowerHeading>
-      <Buttons>View My Work</Buttons>
-      <Buttons style={{position:'relative', left:'2vh'}}>Download CV</Buttons>
+      <Buttons href="#project">View My Work</Buttons>
+      <a href="/Resume.pdf" download='Resume.pdf' ><Buttons  style={{position:'relative', left:'2vh'}}>Download CV</Buttons></a>
      </Detail>
      
     </Section>

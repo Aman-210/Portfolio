@@ -22,7 +22,7 @@ const Headline = styled(Box)(({theme})=>({
     alignItems: "center",
     justifyContent: "center",
     [theme.breakpoints.down('sm')]:{
-        marginLeft:'-3vh'
+        marginLeft:'0'
     }
 
 }))
@@ -46,6 +46,12 @@ const Content1 = styled(Box)(({theme})=>({
    justifyContent:'center',
    padding:'15vh',
    gap:'20vh',
+   [theme.breakpoints.down('md')]:{
+      
+    display:'block',
+    
+    padding:'0'
+   },
    [theme.breakpoints.down('sm')]:{
       
     display:'block',
@@ -58,6 +64,10 @@ const Content2 = styled(Box)(({theme})=>({
    justifyContent:'center',
    marginLeft:'10vh',
    gap:'10vh',
+   [theme.breakpoints.down('md')]:{
+    // display:'block',
+    marginLeft:'1vh'
+   },
    [theme.breakpoints.down('sm')]:{
     display:'block',
     marginLeft:'0'
@@ -69,6 +79,14 @@ const Skill = styled(Typography)(({theme})=>({
    marginLeft:'13vh',
    fontSize:'25px',
    fontWeight:'bold',
+   [theme.breakpoints.down('md')]:{
+       marginLeft:'0',
+       marginTop:'26vh',
+       marginLeft:'-15vh'
+     
+       
+
+   },
    [theme.breakpoints.down('sm')]:{
        marginLeft:'0',
        marginTop:'26vh',
@@ -81,6 +99,10 @@ const Skill = styled(Typography)(({theme})=>({
 const Description = styled(Typography)(({theme})=>({
     color:'#343a40',
     fontFamily:'serif',
+    [theme.breakpoints.down('md')]:{
+       marginLeft:'0',
+      
+    },
     [theme.breakpoints.down('sm')]:{
        marginLeft:'0'
     }
@@ -89,6 +111,12 @@ const Description = styled(Typography)(({theme})=>({
 const Img  = styled('img')(({theme})=>({
   
    marginLeft:'15vh',
+   [theme.breakpoints.down('md')]:{
+       marginLeft:'0',
+       marginTop:'4vh',
+       display:'flex',
+     
+   },
    [theme.breakpoints.down('sm')]:{
        marginLeft:'0',
        marginTop:'4vh',
@@ -99,6 +127,15 @@ const Img  = styled('img')(({theme})=>({
 }))
 const Box1= styled(Box)(({theme})=>({
    
+    [theme.breakpoints.down('md')]:{
+       
+        display:'flex',
+        flexWrap:"Wrap",
+        flexDirection:'coloumn',
+        justifyContent:'center',
+        alignItems:'center',
+      
+    },
     [theme.breakpoints.down('sm')]:{
        
         display:'flex',
@@ -112,6 +149,19 @@ const Box1= styled(Box)(({theme})=>({
 }))
 const Box2= styled(Box)(({theme})=>({
    
+    [theme.breakpoints.down('md')]:{
+       
+        display:'flex',
+        flexWrap:"Wrap",
+        flexDirection:'coloumn',
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom:'20vh',
+      '& >Img , Skill':{
+    marginTop:'10vh',
+    
+      }
+    },
     [theme.breakpoints.down('sm')]:{
        
         display:'flex',
@@ -135,7 +185,7 @@ const Box2= styled(Box)(({theme})=>({
 
 const Container2 =()=>{
 return(
-<Section>
+<Section id="what I do">
        <Headline>
             <UpperHeadline>What Do I do</UpperHeadline>
             <LowerHeadline>How Can I Help Your Organisation</LowerHeadline>

@@ -73,7 +73,7 @@ const Box1 = styled(Box)(({theme})=>({
     marginTop:'2vh',
     borderLeft:'2px solid #f5df4e',
     [theme.breakpoints.down('md')]:{
-    marginLeft:'-3.2vh'
+    marginLeft:'-0.2vh'
      }
 }))
 const Box2 = styled(Box)(({theme})=>({

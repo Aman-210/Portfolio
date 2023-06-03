@@ -185,7 +185,7 @@ const Header2 = ()=>{
         based in Kota, Rajasthan
       </LowerHeading>
       <Buttons href="#project">View My Work</Buttons>
-      <a href="/Resume.pdf" download='Resume.pdf' ><Buttons  style={{position:'relative', left:'2vh'}}>Download CV</Buttons></a>
+      <a href="./Resume.pdf" download='Resume.pdf' ><Buttons  style={{position:'relative', left:'2vh'}}>Download CV</Buttons></a>
      </Detail>
      
     </Section>

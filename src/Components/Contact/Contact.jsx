@@ -17,7 +17,7 @@ const Section = styled(Box)(({theme})=>({
     alignItem: 'center',
     boxSizing: 'border-box',
     [theme.breakpoints.down('sm')]:{
-       
+        marginTop:"",
         width:'100%',
         height:'170vh',
     }

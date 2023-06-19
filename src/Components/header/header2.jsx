@@ -58,8 +58,8 @@ const Image = styled(Box)(({theme})=>({
     [theme.breakpoints.down('sm')]:{
      width:'30vh',
      height:'30vh',
-     marginTop:'5rem',
-     marginRight:'14vh',
+     marginTop:'7rem',
+     marginRight:'12.5vh',
     },
 
 }))

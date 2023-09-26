@@ -106,7 +106,7 @@ const Header = ()=>{
                 </Box>
             </Box>
         )
-    }
+     }
     return(
         <Box>
          <Navbar >

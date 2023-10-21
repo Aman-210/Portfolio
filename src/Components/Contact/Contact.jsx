@@ -122,9 +122,9 @@ const Contact = ()=>{
             <Side2>
             <Typography><h1>Estimate your next Project</h1></Typography>
             <Typography><h4>What is your Name:</h4></Typography>
-            <TextField id="standard-basic"  variant="standard" sx={{ width:'50vh', }} />
+            <TextField id="standard-basic"  variant="standard" sx={{ width:'50vh', }} required />
             <Typography><h4>Your E-mail Address:</h4></Typography>
-            <TextField id="standard-basic"  variant="standard" sx={{width:'50vh', }} />
+            <TextField id="standard-basic"  variant="standard" sx={{width:'50vh', }} required />
             <Typography><h4>How Can I Help you:</h4></Typography>
             <TextField id="standard-basic"  variant="standard"  sx={{width:'50vh', marginTop:'5vh'}}/>
             <Buttons >Send  <ArrowForwardIcon/></Buttons>

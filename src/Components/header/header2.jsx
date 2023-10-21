@@ -182,7 +182,7 @@ const Header2 = ()=>{
         React.Js Developer
       </MiddleHeading>
       <LowerHeading>
-        based in Kota, Rajasthan
+        based in Jaipur, Rajasthan
       </LowerHeading>
       <Buttons href="#project">View My Work</Buttons>
       <a href="./Resume.pdf" download='Resume.pdf' ><Buttons  style={{position:'relative', left:'2vh'}}>Download CV</Buttons></a>

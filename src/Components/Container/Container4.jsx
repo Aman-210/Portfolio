@@ -167,7 +167,7 @@ const Container4 =()=>{
         </CardContent>
       </CardActionArea>
       <CardActions sx={{background:'#343a40'}}>
-        <Button size="small" sx={{color:'#fff'}}   href="https://coffee-shop-aman-210.netlify.app/">
+        <Button size="small" sx={{color:'#fff'}}   href="https://aman-210.github.io/Coffee-Shop/">
           Live Preview
          
         </Button>

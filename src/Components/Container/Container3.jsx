@@ -1,318 +1,272 @@
-import { Box, styled , Typography , Divider ,  Button} from "@mui/material";
+import { Box, Grid, Typography, Divider, Button } from "@mui/material";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const Section= styled(Box)(({theme})=>({
-    // background:'black',
-    width:'100%',
-    
-    [theme.breakpoints.down('sm')]:{
-        marginLeft:'0',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width:'100%',
-     }
-}))
-const Headline = styled(Box)(({theme})=>({
-    color:'#343a40',
+// const experiences = [
+//   {
+//     role: "Software Developer",
+//     company: "Wedigtech",
+//     duration: "May 2024 – Present",
+//     project: "BlueSky Intel (AI & Blockchain Intelligence Platform)",
+//     link: "https://www.blueskyintel.com/",
+//     description:
+//       "Independently handled the React-based portal of a multi-user platform connecting Business Users, Solution Providers, and Investors. Integrated OpenAI APIs, Socket.io-powered real-time chat, Kanban boards, and Stripe subscriptions with role-based access control.",
+//     tech: ["React.js", "Redux Toolkit", "Socket.io", "OpenAI API", "Stripe", "Material UI", "Nest.js", "Laravel"]
+//   },
+//   {
+//     role: "Software Developer",
+//     company: "Wedigtech",
+//     duration: "May 2024 – Present",
+//     project: "BlueSkyIntel Admin Dashboard",
+//     link: "https://www.blueskyintel.com/",
+//     description:
+//       "Developed internal tools for admin operations including user management, analytics, subscription tracking, and role-based dashboards using React and Nest.js.",
+//     tech: ["React.js", "Nest.js", "Material UI", "Chart.js", "Redux"]
+//   },
+//   {
+//     role: "Full-Stack Developer Intern",
+//     company: "Wedigtech",
+//     duration: "Feb 2024 – Apr 2024",
+//     project: "Real Time Angel Fund (Backrr)",
+//     link: "https://www.realtimeaf.com/",
+//     description:
+//       "Integrated advanced spreadsheet features using Fortune React Sheet: real-time data saving, column freezing, formula toggling, and Excel export. Improved responsive UI and authentication systems.",
+//     tech: ["React.js", "Fortune Sheet", "Firebase Auth", "Material UI"]
+//   },
+// ];
+const experiences = [
+  {
+    role: "Software Developer",
+    company: "Wedigtech",
+    duration: "Feb 2024 – Present",
+    projects: [
+      {
+        title: "BlueSky Intel (AI & Blockchain Intelligence Platform)",
+        link: "https://www.blueskyintel.com/",
+        description:
+          "Independently handled the React-based portal of a multi-user platform connecting Business Users, Solution Providers, and Investors. Integrated OpenAI APIs, Socket.io-powered real-time chat, Kanban boards, and Stripe subscriptions with role-based access control.",
+        techStack: ["React.js", "Redux Toolkit", "Material-UI", "Socket.io", "OpenAI API", "Stripe", "Nest.js"],
+      },
+      {
+        title: "WeTeams (Project & Resource  Management Tool)",
+        link: "https://weteams.ai/",
+        description:
+        "Developed a smart project management platform with React.js, Redux Toolkit, and RTK Query. Refactored codebase and integrated Jira and Asana APIs to track employee hours, sprint progress, and resource allocation. Empowered managers with actionable reports and team performance insights.",
+        techStack: ["React.js", "Redux Toolkit", "Material-UI"],
+      },
+      {
+        title: "Real Time Angel Fund (Backrr)",
+        link: "https://www.realtimeaf.com/",
+        description:
+          "Integrated advanced spreadsheet features using Fortune React Sheet: real-time data saving, column freezing, formula toggling, and Excel export. Improved responsive UI and authentication systems.",
+        techStack: ["React.js", "Fortune Sheet", "Material-UI", "Auth.js",],
+      }
+    ]
+  },
+];
+
+
+
+const education = [
+  {
+    degree: "Web Development",
+    institution: "Odin School",
+    duration: "Nov 2023 – Feb 2024",
+    note: "Part-time program",
+  },
+  {
+    degree: "Bachelor in Biology",
+    institution: "University of Kota",
+    duration: "2019 – 2022",
+    note: "Completed with 70%",
+  },
+  {
+    degree: "XII Class",
+    institution: "Ideal Public Senior School",
+    duration: "2018 – 2019",
+    note: "Completed with 82%",
+  },
+  {
+    degree: "X Class",
+    institution: "Ideal Public Senior School",
+    duration: "2016 – 2017",
+    note: "Completed with 90.33%",
+  },
+];
+
+const skills = [
+  { label: "Web Design (65%)", width: "65%" },
+  { label: "HTML/CSS (95%)", width: "95%" },
+  { label: "JavaScript (70%)", width: "70%" },
+  { label: "Material UI (95%)", width: "95%" },
+  { label: "JQuery (65%)", width: "65%" },
+  { label: "React.js (75%)", width: "75%" },
+];
+
+const Container3 = () => {
+  return (
+    <Box sx={{ width: "100%", py: 10, }}>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography sx={{ background: "#f5df4e", display: "inline-block", px: 1 }}>
+          Resume
+        </Typography>
+        <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2 }}>
+          A Summary of My Resume
+        </Typography>
+      </Box>
+      
+      {/* Experience Section */}
+      <Grid container spacing={4}  sx={{ mt: 6 , px: {
+      xs: 1,   // no horizontal padding on extra-small screens
+      sm: 1,   // no horizontal padding on small screens
+      md: 1,   // no horizontal padding on medium screens
+      lg: 10,  // 10 units of horizontal padding on large and up
+    },}}>
+        <Grid item xs={12} md={8}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+            My Experience
+          </Typography>
+          {experiences.map((exp, index) => (
+  <Box key={index} sx={{ borderLeft: "3px solid #f5df4e", pl: 2, mb: 4 }}>
+    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+      {exp.role}
+    </Typography>
+    <Typography sx={{ fontWeight: "bold" }}>
+      {exp.company} / {exp.duration}
+    </Typography>
+
+    {exp.projects.map((project, idx) => (
+      <Box key={idx} sx={{ mt: 2 }}>
+        <Box sx={{display:'flex'}}>
+        <ChevronRightIcon sx={{ color: "#343a40", mr: 1 , }} />
+        <Typography
+          component="a"
+          href={project.link}
+          target="_blank"
+          rel="noreferrer"
+          sx={{ color: "#007bff", fontWeight: "bold" }}
+        >
+          {project.title}
+        </Typography>
+        </Box>
+        <Typography sx={{ mt: 1 }}>{project.description}</Typography>
+
+        {project.techStack && (
+          <Box sx={{ mt: 1 }}>
+            <Typography sx={{ fontWeight: "bold" }}>Tech Stack:</Typography>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 0.5 }}>
+              {project.techStack.map((techItem, i) => (
+                <Box
+                  key={i}
+                  sx={{
+                    backgroundColor: "#343a40",
+                    color: "#fff",
+                    px: 1.5,
+                    py: 0.5,
+                    borderRadius: "8px",
+                    fontSize: "0.875rem",
+                  }}
+                >
+                  {techItem}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        )}
+      </Box>
+    ))}
+
+    {index !== experiences.length - 1 && <Divider sx={{ mt: 4 }} />}
+  </Box>
+))}
+
+        </Grid>
+
+        {/* Education Section */}
+        <Grid item xs={12} md={4}>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+            My Education
+          </Typography>
+          {education.map((edu, index) => (
+            <Box key={index} sx={{ borderLeft: "3px solid #f5df4e", pl: 2, mb: 4 }}>
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                {edu.degree}
+              </Typography>
+              <Typography sx={{ fontWeight: "bold" }}>{edu.institution} / {edu.duration}</Typography>
+              <Typography>{edu.note}</Typography>
+              {index !== education.length - 1 && <Divider sx={{ mt: 2 }} />}
+            </Box>
+          ))}
+        </Grid>
+      </Grid>
+
+      {/* Skills Section */}
+      {/* Skills Section */}
+<Box
+  sx={{
+    mt: { xs: 6, sm: 8, md: 10 },
+    px: { xs: 2, sm: 10 },
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
-    marginTop:'10vh',
-    [theme.breakpoints.down('sm')]:{
-       
-        flex:'block'
-     }
+  }}
+>
+  <Typography
+    variant="h5"
+    sx={{
+      fontWeight: "bold",
+      mb: { xs: 3, sm: 4 },
+      textAlign: "center",
+    }}
+  >
+    My Skills
+  </Typography>
 
-}))
-const UpperHeadline = styled(Typography)(({theme})=>({
-    background:'#f5df4e',
-    [theme.breakpoints.down('sm')]:{
-        
-     }
+  <Grid container spacing={4}>
+    {skills.map((skill, i) => (
+      <Grid item xs={12} sm={6} key={i}>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            fontSize: { xs: "1rem", sm: "1.1rem" },
+          }}
+        >
+          {skill.label}
+        </Typography>
+        <Box
+          sx={{
+            height: "8px",
+            borderRadius: "10px",
+            background: "#f5df4e",
+            width: skill.width,
+            mt: 1,
+            maxWidth: "100%",
+          }}
+        />
+      </Grid>
+    ))}
+  </Grid>
+</Box>
+      {/* Download Resume */}
+      <Box sx={{ textAlign: "center", mt: 8 }}>
+        <Button
+          href="/Aman_Sharma_CV.pdf"
+          download="Aman_Sharma_Resume.pdf"
+          sx={{
+            backgroundColor: "#343a40",
+            color: "#fff",
+            px: 4,
+            py: 1.5,
+            fontWeight: "bold",
+            ":hover": {
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+            },
+          }}
+        >
+          Download CV
+        </Button>
+      </Box>
+    </Box>
+  );
+};
 
-}))
-const LowerHeadline = styled(Typography)(({theme})=>({
-    marginTop:'2vh',
-   fontSize:'40px',
-   fontWeight:'bold',
-   [theme.breakpoints.down('sm')]:{
-    fontSize:'20px'
- }
-}))
-const Section2= styled(Box)(({theme})=>({
-    display: "flex",
-    marginLeft:'18vh',
-    marginTop:'10vh',
-    gap:'10vh',
-    [theme.breakpoints.down('md')]:{
-        marginLeft:'1vh',
-       
-     },
-    [theme.breakpoints.down('sm')]:{
-        marginLeft:'0vh',
-        display:'block'
-     }
-
-}))
-const Heading = styled(Typography)(({theme})=>({
-    fontSize:'30px',
-    fontWeight:'bold',
-    [theme.breakpoints.down('md')]:{
-      
-     fontSize:'27px'
-       
-     },
-    [theme.breakpoints.down('sm')]:{
-      
-
-        marginTop:'3vh'
-     }
- }))
-const Box1 = styled(Box)(({theme})=>({
-    marginTop:'2vh',
-    borderLeft:'2px solid #f5df4e',
-    [theme.breakpoints.down('md')]:{
-    marginLeft:'-0.2vh'
-     }
-}))
-const Box2 = styled(Box)(({theme})=>({
-  marginLeft:'2vh',
-  [theme.breakpoints.down('sm')]:{
-    marginLeft:'0',
-    marginRight:'auto'
- }
-}))
-const Degree = styled(Typography)(({theme})=>({
-    marginTop:'2vh',
-   fontSize:'20px',
-   fontWeight:'bold',
-   [theme.breakpoints.down('sm')]:{
-   
- }
-}))
-const College= styled(Typography)(({theme})=>({
-    marginTop:'2vh',
-   fontSize:'15px',
-   fontWeight:'bold',
-   [theme.breakpoints.down('sm')]:{
-    
- }
-}))
-const Description = styled(Typography)(({theme})=>({
-    marginTop:'2vh',
-    [theme.breakpoints.down('sm')]:{
-        
-     }
-}))
-const Section3 = styled(Box)(({theme})=>({
-    marginTop:'5vh',
-    marginLeft:'17vh',
-    [theme.breakpoints.down('md')]:{
-        marginLeft:'2vh',
-       
-     },
-    [theme.breakpoints.down('sm')]:{
-        marginLeft:'0',
-        marginRight:'auto'
-     }
-}))
-const Skill = styled(Typography)(({theme})=>({
-    fontSize:'30px',
-    fontWeight:'bold',
-    [theme.breakpoints.down('sm')]:{
-        marginLeft:'0vh'
-     }
-}))
-const Section4 = styled(Box)(({theme})=>({
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '50vh',
-  [theme.breakpoints.down('md')]:{
-    gap:'2vh'
-  
- },
-  [theme.breakpoints.down('sm')]:{
-    
-    display:'block'
- },
- 
- 
-}))
-const Skills = styled(Typography)(({theme})=>({
-  fontSize:'15px',
-  fontWeight:'bold',
-  marginTop:'3vh',
-  [theme.breakpoints.down('sm')]:{
-  marginLeft:'0vh'
- }
-
-}))
-const Border1 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'44vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'29vh',
- }
-
-}))
-const Border2 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'60vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'45vh',
- }
-
-}))
-const Border3 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'50vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'35vh',
- }
-
-}))
-const Border4 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'60vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'45vh',
- }
-
-}))
-const Border5 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'44vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'29vh',
- }
-
-}))
-const Border6 = styled(Typography)(({theme})=>({
-  background:'#f5df4e',
-  height:'8px',
-  borderRadius:'10px',
-  marginTop:'3vh',
-  width:'54vh',
-  [theme.breakpoints.down('sm')]:{
-    width:'39vh',
- }
-
-}))
-const Buttons = styled(Button)(({theme})=>({
-    marginTop:'8vh',
-     background:'#343a40',
-    color:'#fff',
-    padding:'2vh',
-    display:'block',
-    marginLeft:'45%',
-    width:'20vh',
-    ":hover":{
-     background:'rgba(0, 0, 0, 0.5)'
-    },
-    [theme.breakpoints.down('sm')]:{
-         marginLeft:'-5vh'
-    }
-    
- }))
-
-const Container3 = ()=>{
-    return(
-    <Section >
-        <Headline>
-            <UpperHeadline>Resume</UpperHeadline>
-            <LowerHeadline>A Summary of my Resume</LowerHeadline>
-        </Headline>
-        <Section2>
-        <Box>
-            <Heading>
-                My Projects
-            </Heading>
-            <Box1 >
-                <Box2 >
-               <Degree>E-Commerce</Degree>
-               <College>Coffee Shop</College>
-               <Description>
-              "I have developed a dynamic e-commerce project using React.js and Material-UI.<br/> It features a user-friendly interface with functionalities like product browsing,<br/> cart management, and a visually appealing design. The project incorporates <br/>responsive design, product filtering, sorting functionality. It also includes user<br/> authentication, account management features for a secure and personalized experience."</Description>
-               </Box2>
-               <Divider variant="middle" sx={{marginTop:'2vh'}} />
-                <Box2 >
-               <Degree>PortFolio</Degree>
-               <College>Personal Portfolio</College>
-               <Description>  I have created an impressive portfolio website using React.js and Material-UI.<br/>  The responsive layout ensures compatibility across devices.<br/> The portfolio includes sections for background, experience, and projects, presented with<br/> captivating visuals and interactive elements. It features smooth navigation<br/> and a contact form for easy communication. The portfolio effectively represents my skills and capabilities.</Description>
-               </Box2>
-               
-               
-            </Box1>
-            
-        </Box>
-        <Box>
-            <Heading>
-                My Education
-            </Heading>
-            <Box1 >
-                <Box2 >
-               <Degree>Bachelor in Biology</Degree>
-               <College>University of Kota / 2019-2022</College>
-               <Description>  Completed with 70%</Description>
-               </Box2>
-               <Divider variant="middle" sx={{marginTop:'2vh',}} />
-                <Box2 >
-               <Degree>XII<sup>th</sup> Class</Degree>
-               <College>Ideal Public Senior School / 2018-2019</College>
-               <Description>  Completed with 82%</Description>
-               </Box2>
-               <Divider variant="middle" sx={{marginTop:'2vh'}} />
-                <Box2 >
-               <Degree>X<sup>th</sup> Class</Degree>
-               <College>Ideal Public Senior School / 2016-2017</College>
-               <Description> Completed with 90.33%</Description>
-               </Box2>
-            </Box1>
-            
-        </Box>
-        
-        </Section2>
-        <Section3>
-            <Skill>My Skills</Skill>
-           <Section4>
-            <Box>
-                <Skills>Web Design(65%)</Skills>
-                <Border1></Border1>
-                <Skills>HTML/CSS (95%)</Skills>
-                <Border2 ></Border2>
-                <Skills>JavaScript(70%)</Skills>
-                <Border3 ></Border3>
-            </Box>
-            <Box >
-                <Skills>Material UI (95%)</Skills>
-                <Border4 ></Border4>
-                <Skills>JQuery (65%)</Skills>
-                <Border5 ></Border5>
-                <Skills>React.JS(75%)</Skills>
-                <Border6></Border6>
-            </Box>
-            </Section4>
-        </Section3>
-        
-          <Buttons href="/Resume.pdf" download='Resume.pdf' >Download CV</Buttons>
-        
-    </Section>
-    )
-}
 export default Container3;

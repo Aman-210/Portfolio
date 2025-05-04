@@ -119,6 +119,7 @@ const Header2 = () => {
                   href="/Aman_Sharma_CV.pdf"
                   download="Aman_Sharma_Resume.pdf"
                   variant="contained"
+                  
                   sx={{
                     backgroundColor: "#343a40",
                     color: "#fff",

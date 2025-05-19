@@ -7,7 +7,7 @@ import {
   Container,
 } from "@mui/material";
 import { ReactTyped } from "react-typed";
-import resumePDF from '../../assets/files/Aman_Sharma_CV.pdf';
+// import resumePDF from '../../assets/files/Aman_Sharma_CV.pdf';
 import { getImages } from "../imageHelper";
 
 const Image = styled(Box)(({ theme }) => ({
@@ -116,7 +116,7 @@ const Header2 = () => {
                   View My Work
                 </Button>
                 <Button
-                  href={resumePDF}
+                  href="/Aman_Sharma_CV.pdf"
                   download="Aman_Sharma_Resume.pdf"
                   variant="contained"
                   

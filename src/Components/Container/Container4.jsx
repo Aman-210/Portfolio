@@ -34,7 +34,7 @@ const projects = [
     code: "https://github.com/Aman-210/Coffee-Shop",
   },
   {
-    title: "Expanse Tracker",
+    title: "Expense Tracker",
     img: "https://www.investopedia.com/thmb/n_puoJ_uYi2Uf-mminThTUFocVw=/2409x1245/filters:fill(auto,1)/GettyImages-497058936-9b09e74b98a74f63a6d22664ba35f3ea.jpg",
     desc: "Built using React.js. Helped strengthen my logic and understanding of hooks, props, and reusable component patterns.",
     live: "https://aman-210.github.io/Expanse-tracker/",

@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/Portfolio/static/js/main.47cafb2e.js",
+    "main.js": "/Portfolio/static/js/main.a6b913f9.js",
     "static/media/photo.jpg": "/Portfolio/static/media/photo.c3ddc29d871f02ac3933.jpg",
-    "static/media/Aman_Sharma_CV.pdf": "/Portfolio/static/media/Aman_Sharma_CV.08f8bc4cd69f50824e8e.pdf",
     "index.html": "/Portfolio/index.html",
     "main.e6c13ad2.css.map": "/Portfolio/static/css/main.e6c13ad2.css.map",
-    "main.47cafb2e.js.map": "/Portfolio/static/js/main.47cafb2e.js.map"
+    "main.a6b913f9.js.map": "/Portfolio/static/js/main.a6b913f9.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.47cafb2e.js"
+    "static/js/main.a6b913f9.js"
   ]
 }
